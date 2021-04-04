@@ -56,7 +56,7 @@ class DevelopConfig(Config):
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(DATABASE)
     # 用于连接redis的配置
-    SESSION_REDIS = redis.Redis(host='39.98.139.205', port='6379', password='', db=0)
+    SESSION_REDIS = redis.Redis(host='39.98.139.205', port='6379', password='123456', db=0)
 
 
 class ProductConfig(Config):
@@ -67,7 +67,7 @@ class ProductConfig(Config):
     SQLALCHEMY_POOL_SIZE = 20
     SQLALCHEMY_POOL_RECYCLE = 29
     # 用于连接redis的配置
-    SESSION_REDIS = redis.Redis(host='39.98.139.205', port='6379', password='', db=0)
+    SESSION_REDIS = redis.Redis(host='39.98.139.205', port='6379', password='123456', db=0)
     DATABASE = {
         "user": "root",
         "pwd": "123456",
