@@ -1,0 +1,15 @@
+from flask_migrate import MigrateCommand
+from flask_script import Manager, Server
+
+from flask_app import create_app
+
+# app = create_app('ProductConfig')  # 可以设置环境变量进行判断使用配置
+app = create_app('DevelopConfig')
+
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
+manager.add_command("runserver", Server(host="0.0.0.0", port=5000, threaded=True))
+
+
+if __name__ == '__main__':
+    manager.run()
